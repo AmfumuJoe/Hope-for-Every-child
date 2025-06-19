@@ -78,9 +78,7 @@ nav ul li a:hover {
 /* Header/Hero Section */
 header {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url(Images/walk.jpg) no-repeat center center;
-    background-size: cover;
-    background-position: center;
+                url('../Images/walk.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -90,6 +88,9 @@ header {
     color: rgb(236, 228, 240);
     padding: 0 20px;
     margin-top: 70px;
+    position: relative; /* Add this */
+    z-index: 1; /* Add this */
+}
 }
 
 .logo-text {
@@ -110,7 +111,7 @@ header {
     line-height: 1.5;
 }
 
-.tagline:nth-of-type(2) {
+.tagline2 {
     font-size: 1.1rem;
 }
 
