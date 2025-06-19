@@ -91,7 +91,6 @@ header {
     position: relative; /* Add this */
     z-index: 1; /* Add this */
 }
-}
 
 .logo-text {
     font-size: 4rem;
