@@ -78,7 +78,7 @@ nav ul li a:hover {
 /* Header/Hero Section */
 header {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('Images/walk.jpg') no-repeat center center;
+    urlurl('../Images/class.jpg'); no-repeat center center;
     background-size: cover;
     background-position: center;
     height: 100vh;
