@@ -77,10 +77,9 @@ nav ul li a:hover {
 
 /* Header/Hero Section */
 header {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    urlurl('../Images/class.jpg'); no-repeat center center;
-    background-size: cover;
-    background-position: center;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../Images/class.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
