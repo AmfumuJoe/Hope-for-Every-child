@@ -77,19 +77,11 @@ nav ul li a:hover {
 
 /* Header/Hero Section */
 header {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('Images/walk.jpg') no-repeat center center;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
-    margin-top: 70px;
+/* Background image */
+  background-image: url('../Images/class.jpg );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .logo-text {
