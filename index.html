@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hope for Every Child - Empowering Malawian children through education and support">
     <title>HOPE 4 EVERYCHILD | Empowering Malawian Children</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -11,7 +12,7 @@
     <!-- Gradient Navigation Bar -->
     <div class="header-container">
         <img src="Images/1.png" alt="HOPE for EVERYCHILD Logo" class="header-logo">
-        <div class="hamburger">☰</div>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
         <nav id="mainNav">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -30,14 +31,14 @@
              underprivileged children in Malawi. Our mission is to ensure that every child, regardless of their socio-economic
               background, has access to quality education by covering school fees, providing educational materials, 
               and supporting their holistic learning journey.</p>
-        <div>
+        <div class="cta-buttons">
             <a href="#donate" class="btn">Donate Now</a>
             <a href="#contact" class="btn">Get Involved</a>
         </div>
     </header>
     
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats" aria-label="Our Impact">
         <div class="stat-item">
             <div class="stat-number">75</div>
             <p>Children Helped</p>
@@ -61,7 +62,7 @@
             <div class="story-cards">
                 <!-- Story 1 -->
                 <article class="story-card">
-                    <img src="Images/kids.jpg" alt="Grace's Story" class="story-image">
+                    <img src="Images/kids.jpg" alt="Grace smiling at school" class="story-image">
                     <div class="story-content">
                         <span class="story-date">March 15, 2025</span>
                         <h3>Grace's Journey to Education</h3>
@@ -72,7 +73,7 @@
                 
                 <!-- Story 2 -->
                 <article class="story-card">
-                    <img src="Images/books.jpg" alt="School Building" class="story-image">
+                    <img src="Images/books.jpg" alt="Stack of textbooks on a desk" class="story-image">
                     <div class="story-content">
                         <span class="story-date">January 30, 2025</span>
                         <h3>Text books for Mchinji Secondary School</h3>
@@ -83,7 +84,7 @@
                 
                 <!-- Story 3 -->
                 <article class="story-card">
-                    <img src="Images/water.jpg" alt="Water Project" class="story-image">
+                    <img src="Images/water.jpg" alt="Children collecting clean water" class="story-image">
                     <div class="story-content">
                         <span class="story-date">November 5, 2024</span>
                         <h3>Clean Water Changes Everything</h3>
@@ -101,13 +102,13 @@
         <p>Your donation can change a child's life forever</p>
         
         <div class="donation-options">
-            <div class="donation-amount" data-amount="2500">MK25,000</div>
-            <div class="donation-amount" data-amount="50000">MK50,000</div>
-            <div class="donation-amount" data-amount="100000">MK150,000</div>
-            <div class="donation-amount" data-amount="250000">MK250,000</div>
+            <button type="button" class="donation-amount" data-amount="2500">MK25,000</button>
+            <button type="button" class="donation-amount" data-amount="50000">MK50,000</button>
+            <button type="button" class="donation-amount" data-amount="100000">MK150,000</button>
+            <button type="button" class="donation-amount" data-amount="250000">MK250,000</button>
         </div>
         
-        <form class="donation-form" id="donationForm">
+        <form class="donation-form" id="donationForm" novalidate>
             <input type="number" id="customAmount" placeholder="Or enter custom amount (MK)" required>
             <input type="text" id="fullName" placeholder="Full Name" required>
             <input type="email" id="email" placeholder="Email Address" required>
@@ -126,7 +127,7 @@
         <h2>Get In Touch</h2>
         <p>Have questions? Want to volunteer? Contact us!</p>
         
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" novalidate>
             <input type="text" id="name" placeholder="Your Name" required>
             <input type="email" id="contactEmail" placeholder="Your Email" required>
             <input type="text" id="subject" placeholder="Subject" required>
@@ -138,14 +139,44 @@
     <!-- Footer -->
     <footer>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
         <p>&copy; 2025 HOPE for EVERYCHILD. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            nav.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Donation amount buttons
+        document.querySelectorAll('.donation-amount').forEach(button => {
+            button.addEventListener('click', function() {
+                document.getElementById('customAmount').value = this.dataset.amount;
+            });
+        });
+
+        // Form submission handlers
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your donation form handling logic here
+            alert('Thank you for your donation! (This would process the form in a real implementation)');
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your contact form handling logic here
+            alert('Thank you for your message! (This would process the form in a real implementation)');
+        });
+    </script>
 </body>
 </html>
